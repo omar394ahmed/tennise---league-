@@ -13,7 +13,7 @@ Run APi steps : -
 
 - application run with H2 DB  and scheme is build with Spring data JPA just for sake of time .
 
-- if u need populate to save time please run generated-http-requests file but to test the api and the power of it please do it manually through the front-and application .
+- if u need populate  seed-data to save time please run seed data file in the root directory but to test the api and the power of it please do it manually through the front-and application .
 
 # the covered consepts in this project is 
  
