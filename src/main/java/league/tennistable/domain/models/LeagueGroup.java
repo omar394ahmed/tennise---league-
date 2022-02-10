@@ -5,6 +5,7 @@ import league.tennistable.domain.models.dto.GroupNumeration;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -27,5 +28,11 @@ public class LeagueGroup {
     @Override
     public String toString() {
         return "";
+    }
+
+
+
+    public LeagueGroup() {
+        this.colleges = new HashSet<>();
     }
 }

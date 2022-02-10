@@ -1,6 +1,7 @@
 package league.tennistable.service;
 
 
+import league.tennistable.domain.models.LeagueGroup;
 import league.tennistable.domain.models.Participant;
 
 import java.util.List;
@@ -14,8 +15,9 @@ public interface ParticipantService {
 
     List<Participant> getAll();
 
-
     Participant getParticipant(Long id);
 
     List<Participant> getNonMatchParticipant(Long id);
+
+    void addParticipantsToTheirGroups(LeagueGroup createdGroup);
 }

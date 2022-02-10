@@ -1,5 +1,6 @@
 package league.tennistable.service.implementations;
 
+import league.tennistable.domain.models.LeagueGroup;
 import league.tennistable.domain.models.Participant;
 import league.tennistable.domain.repositories.ParticipantRepo;
 import league.tennistable.service.ParticipantService;
@@ -39,4 +40,19 @@ public class ParticipantServiceImp implements ParticipantService {
     public Participant addToGroup(Participant participant) {
         return participantRepo.save(participant);
     }
+
+
+    @Override
+    public void addParticipantsToTheirGroups(LeagueGroup createdGroup) {
+
+        createdGroup.getColleges().forEach(participant -> {
+            if (participant.getLeagueGroup() == null) {
+                participant.setLeagueGroup(createdGroup);
+                Participant UpdatesParticipant = addToGroup(participant);
+            }
+        });
+
+    }
+
+
 }
